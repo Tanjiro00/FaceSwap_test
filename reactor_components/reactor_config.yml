@@ -1,0 +1,30 @@
+providers:
+  - CUDAExecutionProvider
+  # - TensorrtExecutionProvider
+  - CPUExecutionProvider
+
+models:
+  ckpts_dir: ./weights/reactor
+  insightface:
+    home: ./weights/reactor
+    link: https://github.com/deepinsight/insightface/releases/download/v0.7/buffalo_l.zip
+  face_detection_model:
+    name: retinaface_resnet50
+    path: ./weights/reactor/detection_Resnet50_Final.pth
+    link: https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_Resnet50_Final.pth
+  face_swap_model:
+    name: inswapper_128
+    path: ./weights/reactor/inswapper_128.onnx
+    link: https://huggingface.co/ezioruan/inswapper_128.onnx/resolve/main/inswapper_128.onnx
+  face_restoration_model:
+    name: codeformer
+    path: ./weights/reactor/codeformer-v0.1.0.pth
+    link: https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/facerestore_models/codeformer-v0.1.0.pth
+  face_parse_model:
+    name: parsenet
+    path: ./weights/reactor/parsing_parsenet.pth
+    link: https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/parsing_parsenet.pth
+
+params:
+  face_restore_visibility: 1.0
+  codeformer_weight: 0.5
