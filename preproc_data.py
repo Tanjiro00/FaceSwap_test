@@ -15,7 +15,6 @@ def create_text_files_for_images(folder_path):
             with open(txt_filepath, 'w', encoding='utf-8') as txt_file:
                 txt_file.write("person")
 
-            print(f"Создан файл: {txt_filepath}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
