@@ -58,7 +58,9 @@ pip install -r requirements.txt
 ---
 
 ## **2. Онлайн подход**  
-Для онлайн-реализации используется **ComfyUI** .  
+Для онлайн-реализации используется SDXL . 
+Здесь я подключил Face ID, Style IP-Adapter и ControlNet++
+Весь пайплайн находиться в ноутбуке SDXL_Face.ipynb
 
 ---
 
