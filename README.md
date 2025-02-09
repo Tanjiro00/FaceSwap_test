@@ -53,7 +53,7 @@ pip install -r requirements.txt
    ```
 
 4. **Использование обученной LoRA**  
-   Укажите путь к обученной LoRA в `FaceSwapRedux.ipynb`.  
+   Укажите путь к обученной LoRA в `FaceSwapRedux.ipynb`, предворительно установив зависимости из requirements.txt.  
 
 ---
 
