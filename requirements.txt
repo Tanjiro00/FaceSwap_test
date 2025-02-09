@@ -1,0 +1,2 @@
+image_gen_aux @ git+https://github.com/asomoza/image_gen_aux.git@b3ba07be8cba37f9ec2a5748ae5d86cc3879e228
+diffusers==0.32.2
