@@ -54,7 +54,10 @@ pip install -r requirements.txt
 
 4. **Использование обученной LoRA**  
    Укажите путь к обученной LoRA в `FaceSwapRedux.ipynb`, предворительно установив зависимости из requirements.txt.
-   Веса лоры обученной на данных из ноушена лежат тут https://huggingface.co/Deenchik/faceLora/blob/main/face_lora.safetensors
+   
+Веса лоры обученной на данных из ноушена лежат тут https://huggingface.co/Deenchik/faceLora/blob/main/face_lora.safetensors
+#### **Результаты**
+![out1](https://github.com/user-attachments/assets/a0930f45-400e-415b-b6be-6768f7f4381f)
 
 ---
 
