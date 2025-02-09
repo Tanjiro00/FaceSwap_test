@@ -1,51 +1,73 @@
-# FaceSwap_test
-FaceSwap with SDM
-В данном репозитории представленны 2 реализации алгоритма: оффлайн(с тюном лоры для FLUX1.dev по 5-10 фотографиям) и онлайн(в ComfyUI без тюна)
-1 подход)
-    Здесь у меня самый удачный вариант получился с помощью обучения LoRA адаптера на человеке для сохранение консистентности и учитвание стиля через redux
-    Чтобы затюнить лору использовал ai-toolkit
-    ## Installation
-    
-    Requirements:
-    - python >3.10
-    - Nvidia GPU with enough ram to do what you need
-    - python venv
-    - git
-    
-    
-    
-    Linux:
-    ```bash
-    git clone https://github.com/ostris/ai-toolkit.git
-    cd ai-toolkit
-    git submodule update --init --recursive
-    python3 -m venv venv
-    source venv/bin/activate
-    # .\venv\Scripts\activate on windows
-    # install torch first
-    pip3 install torch
-    pip3 install -r requirements.txt
-    ```
-    
-    Windows:
-    ```bash
-    git clone https://github.com/ostris/ai-toolkit.git
-    cd ai-toolkit
-    git submodule update --init --recursive
-    python -m venv venv
-    .\venv\Scripts\activate
-    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-    pip install -r requirements.txt
-    ```
-    ## Training
-    Перед обучением лоры запустите код для препрцессинга данных
-    ```
-    python preproc_data.py <path to folder with images>
-    ```
-    Дальше нужно изменить в конфиге путь данным  и запустить скрипт
-    ```
-    python run.py train_lora_flux_24gb.yaml
-    ```
-    Обученную лору нужно указать в FaceSwapRedux.ipynb
-    
-    
+# FaceSwap_test  
+**FaceSwap with SDM**  
+
+В данном репозитории представлены две реализации алгоритма замены лиц:  
+- **Оффлайн**: С использованием тонкой настройки LoRA адаптера для FLUX1.dev на основе 5-10 фотографий.  
+- **Онлайн**: В ComfyUI без тонкой настройки.  
+
+---
+
+## **1. Оффлайн подход**  
+Самый удачный вариант был достигнут с помощью обучения LoRA адаптера на фотографиях человека. Это позволяет сохранить консистентность и учитывать стиль через Redux.  
+
+### **Установка**  
+
+#### **Требования**  
+- Python > 3.10  
+- Nvidia GPU с достаточным объемом памяти  
+- Python venv  
+- Git  
+
+#### **Linux**  
+```bash
+git clone https://github.com/ostris/ai-toolkit.git
+cd ai-toolkit
+git submodule update --init --recursive
+python3 -m venv venv
+source venv/bin/activate
+# Установите torch первым
+pip3 install torch
+pip3 install -r requirements.txt
+```
+
+#### **Windows**  
+```bash
+git clone https://github.com/ostris/ai-toolkit.git
+cd ai-toolkit
+git submodule update --init --recursive
+python -m venv venv
+.\venv\Scripts\activate
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+pip install -r requirements.txt
+```
+
+### **Обучение LoRA**  
+
+1. **Препроцессинг данных**  
+   Перед обучением LoRA выполните предварительную обработку данных:  
+   ```bash
+   python preproc_data.py <path to folder with images>
+   ```
+
+2. **Настройка конфигурации**  
+   Измените путь к данным в конфиге train_lora_flux_24gb.yaml.  
+
+3. **Запуск обучения**  
+   Запустите скрипт обучения:  
+   ```bash
+   python run.py train_lora_flux_24gb.yaml
+   ```
+
+4. **Использование обученной LoRA**  
+   Укажите путь к обученной LoRA в `FaceSwapRedux.ipynb`.  
+
+---
+
+## **2. Онлайн подход**  
+Для онлайн-реализации используется **ComfyUI** без необходимости тонкой настройки.  
+
+---
+
+
+---
+
