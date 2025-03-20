@@ -10,8 +10,8 @@
 ### 1. Оффлайн-подход (Fine-tuning LoRA адаптера)
 Используется обучение LoRA-адаптера на основе 5-10 фотографий целевого лица.  
 **Основные методы:**  
-- Redux + Realism LoRA с Depth ControlNet в ComfyUI  
-- Inpaint с 40% зашумлением (наиболее эффективное решение)  
+- Inpaint с 40% зашумлением (наиболее эффективное решение). флоу inpaint_lora.json
+- Redux + Realism LoRA с Depth ControlNet в ComfyUI. флоу redux+canny_good.json
 
 #### Установка
 ##### Linux
@@ -67,7 +67,7 @@ pip install -r requirements.txt
 ### 2. Онлайн-подход
 Используется пайплайн ComfyUI с интеграцией PuLID/InstanceID.  
 **Основные методы:**  
-1. PuLID + Face Segmentation + Inpaint (наилучшие результаты)  
+1. PuLID + Face Segmentation + Inpaint (наилучшие результаты)  inpaint_pulid.json
 2. ReActor + CodeFormer (альтернативное решение)  
 
 #### Требования
